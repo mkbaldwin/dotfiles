@@ -1,8 +1,26 @@
+# Executed for non-login shells + login shells (sourced by .bash_profile)
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 ###############################################################################
 # Custom Command Aliases
 ###############################################################################
-alias ll="ls -lahG"
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 ###############################################################################
 # Determine the platform we are on and source platform specific settings
@@ -20,8 +38,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 ###############################################################################
-# Install and make nvm available
+# Source any extra scripts we defined under ~/.scripts/extras
 ###############################################################################
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ for f in ~/.scripts/extras/*.sh; do 
+  source "$f"
+done
