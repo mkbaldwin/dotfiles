@@ -18,4 +18,6 @@ fi
 if [ -d "$SDKMAN_DIR" ]; then
   export SDKMAN_DIR
   [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+else
+  unset SDKMAN_DIR
 fi
