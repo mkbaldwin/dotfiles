@@ -9,6 +9,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Custom Command Aliases that are macOS specific
 ###############################################################################
 alias ll='ls -lahG'
+alias unquarantine='xattr -r -d com.apple.quarantine'
 
 
 ###############################################################################
