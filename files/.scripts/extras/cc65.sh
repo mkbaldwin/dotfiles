@@ -11,6 +11,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     CC65_DIR=~/dev-tools/cc65/bin
 fi
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  CC65_DIR=~/opt/cc65/bin
+fi
+
+
+
 if [ -d "$CC65_DIR" ]; then
     export PATH="$CC65_DIR:$PATH"
 else
