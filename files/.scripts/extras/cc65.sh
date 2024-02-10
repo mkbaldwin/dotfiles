@@ -12,7 +12,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  CC65_DIR=~/opt/cc65/bin
+    CC65_DIR=/opt/cc65/bin
 fi
 
 
